@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<article class="project">
+  <header class="project-header">
+    <h1 class="page-title">{{ page.title }}</h1>
+    {%- if page.place or page.year %}
+    <p class="project-meta">{{ page.place }}{% if page.place and page.year %}, {% endif %}{{ page.year }}</p>
+    {%- endif %}
+  </header>
+
+  {% include gallery.html images=page.gallery id="gallery-main" %}
+  {% include video.html vimeo=page.vimeo youtube=page.youtube %}
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
+  {%- if page.section %}
+  <p class="back"><a href="{{ '/' | append: page.section | append: '/' | relative_url }}">&larr; Back to {{ page.section | replace: "-", " " | capitalize }}</a></p>
+  {%- endif %}
+</article>

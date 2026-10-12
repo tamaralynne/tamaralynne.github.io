@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<section class="home">
+  {%- if page.hero %}
+  <figure class="home-hero">
+    <img src="{{ page.hero | relative_url }}" alt="{{ page.hero_alt | default: site.title | escape }}">
+  </figure>
+  {%- endif %}
+  <div class="prose home-intro">
+    {{ content }}
+  </div>
+</section>

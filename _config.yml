@@ -1,0 +1,39 @@
+# ------------------------------------------------------------
+# Site settings for tamaralynne.github.io
+# GitHub Pages builds this automatically on every push to main.
+# ------------------------------------------------------------
+
+title: Tamara Lynne
+description: Theatre, visual art, and presentations.
+url: "https://tamaralynne.github.io"
+baseurl: ""   # leave empty: the site lives at the root of the URL above
+
+lang: en
+markdown: kramdown
+
+# Every piece of work (theatre, visual art) is one file in _projects/.
+# The `section` field in each file decides which page it appears on.
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+
+exclude:
+  - README.md
+  - EDITING-GUIDE.md
+  - Gemfile
+  - Gemfile.lock
+  - .pages.yml
+  - vendor

@@ -1,0 +1,27 @@
+{%- comment -%}
+  Slideshow gallery. Usage:
+    {% include gallery.html images=page.gallery id="g1" %}
+  Each image is { src, caption }. The id keeps several galleries on one
+  page independent of each other.
+{%- endcomment -%}
+{%- assign imgs = include.images -%}
+{%- if imgs and imgs.size > 0 -%}
+{%- assign gid = include.id | default: "gallery" -%}
+<div class="gallery" id="{{ gid }}" data-gallery>
+  <div class="gallery-stage">
+    {%- for img in imgs %}
+    <figure class="gallery-slide{% if forloop.first %} is-active{% endif %}" aria-hidden="{% if forloop.first %}false{% else %}true{% endif %}">
+      <img src="{{ img.src | relative_url }}" alt="{{ img.caption | default: page.title | escape }}" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">
+      {%- if img.caption and img.caption != "" %}<figcaption>{{ img.caption }}</figcaption>{% endif %}
+    </figure>
+    {%- endfor %}
+  </div>
+  {%- if imgs.size > 1 %}
+  <div class="gallery-controls">
+    <button type="button" class="gallery-prev" aria-label="Previous image">&larr;</button>
+    <span class="gallery-count" aria-live="polite">1 / {{ imgs.size }}</span>
+    <button type="button" class="gallery-next" aria-label="Next image">&rarr;</button>
+  </div>
+  {%- endif %}
+</div>
+{%- endif -%}

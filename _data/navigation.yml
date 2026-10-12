@@ -1,0 +1,11 @@
+# Main menu, in order. Add or remove lines to change the menu.
+- title: About
+  url: /about/
+- title: Theatre
+  url: /theatre/
+- title: Visual Art
+  url: /visual-art/
+- title: Presentations
+  url: /presentations/
+- title: Contact
+  url: /contact/

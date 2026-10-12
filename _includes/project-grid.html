@@ -1,0 +1,18 @@
+{%- comment -%}
+  Grid of project tiles for one section. Usage:
+    {% include project-grid.html section="theatre" %}
+  Ordered by the `order` field (lowest first), then title.
+{%- endcomment -%}
+{%- assign items = site.projects | where: "section", include.section | sort: "order" -%}
+<ul class="project-grid">
+  {%- for p in items %}
+  {%- assign thumb = p.cover | default: p.gallery.first.src %}
+  <li>
+    <a href="{{ p.url | relative_url }}">
+      {%- if thumb %}<img src="{{ thumb | relative_url }}" alt="" loading="lazy">{% endif %}
+      <span class="tile-title">{{ p.title }}</span>
+      {%- if p.place or p.year %}<span class="tile-meta">{{ p.place }}{% if p.place and p.year %}, {% endif %}{{ p.year }}</span>{% endif %}
+    </a>
+  </li>
+  {%- endfor %}
+</ul>

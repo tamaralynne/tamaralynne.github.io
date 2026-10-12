@@ -1,0 +1,18 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+{%- if page.title and page.url != "/" -%}
+  {%- assign full_title = page.title | append: " — " | append: site.title -%}
+{%- else -%}
+  {%- assign full_title = site.title -%}
+{%- endif %}
+<title>{{ full_title }}</title>
+{%- assign desc = page.summary | default: site.description | strip_html | strip_newlines | truncate: 160 %}
+<meta name="description" content="{{ desc }}">
+<meta property="og:title" content="{{ full_title }}">
+<meta property="og:description" content="{{ desc }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+{%- assign og = page.cover | default: "/assets/images/site/og-image.jpg" %}
+<meta property="og:image" content="{{ og | absolute_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">

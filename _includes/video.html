@@ -1,0 +1,10 @@
+{%- comment -%}
+  Vimeo or YouTube embed from a bare ID. Usage:
+    {% include video.html vimeo=page.vimeo %}
+    {% include video.html youtube=page.youtube %}
+{%- endcomment -%}
+{%- if include.vimeo and include.vimeo != "" %}
+<div class="video"><iframe src="https://player.vimeo.com/video/{{ include.vimeo }}?dnt=1" title="{{ include.title | default: page.title | escape }}" allow="fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+{%- elsif include.youtube and include.youtube != "" %}
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/{{ include.youtube }}" title="{{ include.title | default: page.title | escape }}" referrerpolicy="strict-origin-when-cross-origin" allow="fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+{%- endif %}
