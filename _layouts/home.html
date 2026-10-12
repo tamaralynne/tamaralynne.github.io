@@ -2,7 +2,7 @@
 layout: default
 ---
 <section class="home">
-  {%- if page.hero %}
+  {%- if page.hero and page.hero != "" %}
   <figure class="home-hero">
     <img src="{{ page.hero | relative_url }}" alt="{{ page.hero_alt | default: site.title | escape }}">
   </figure>
