@@ -1,0 +1,139 @@
+# Pages CMS configuration (https://pagescms.org)
+# Gives Tamara a form-based editor for this site. Saving in Pages CMS
+# commits to GitHub, and the site rebuilds in about a minute.
+
+media:
+  input: assets/images
+  output: /assets/images
+
+content:
+  - name: projects
+    label: Theatre & Visual Art
+    type: collection
+    path: _projects
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      primary: title
+      fields: [title, section, year]
+      sort: order
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: section
+        label: Which page does this belong on?
+        type: select
+        required: true
+        options:
+          values: [theatre, visual-art]
+      - name: place
+        label: Place / venue
+        type: string
+      - name: year
+        label: Year
+        type: string
+      - name: order
+        label: Position on the page (lower numbers come first)
+        type: number
+      - name: cover
+        label: Tile image (optional; uses the first gallery image if empty)
+        type: image
+      - name: gallery
+        label: Gallery images
+        type: object
+        list:
+          collapsible:
+            summary: "{fields.caption}"
+        fields:
+          - name: src
+            label: Image
+            type: image
+          - name: caption
+            label: Caption
+            type: string
+      - name: vimeo
+        label: Vimeo video number (optional)
+        type: string
+      - name: body
+        label: Description
+        type: rich-text
+
+  - name: home
+    label: Home page
+    type: file
+    path: index.md
+    format: yaml-frontmatter
+    fields:
+      - name: layout
+        type: string
+        hidden: true
+        default: home
+      - name: title
+        type: string
+        hidden: true
+        default: Home
+      - name: hero
+        label: Main image
+        type: image
+      - name: hero_alt
+        label: Describe the main image (for screen readers)
+        type: string
+      - name: body
+        label: Welcome text
+        type: rich-text
+
+  - name: about
+    label: About page
+    type: file
+    path: about.md
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        type: string
+        hidden: true
+        default: About
+      - name: permalink
+        type: string
+        hidden: true
+        default: /about/
+      - name: body
+        label: Text
+        type: rich-text
+
+  - name: presentations
+    label: Presentations page
+    type: file
+    path: presentations.md
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        type: string
+        hidden: true
+        default: Presentations
+      - name: permalink
+        type: string
+        hidden: true
+        default: /presentations/
+      - name: body
+        label: Text
+        type: rich-text
+
+  - name: contact
+    label: Contact page
+    type: file
+    path: contact.md
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        type: string
+        hidden: true
+        default: Contact
+      - name: permalink
+        type: string
+        hidden: true
+        default: /contact/
+      - name: body
+        label: Text
+        type: rich-text
