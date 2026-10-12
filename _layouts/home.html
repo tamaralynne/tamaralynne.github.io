@@ -2,12 +2,11 @@
 layout: default
 ---
 <section class="home">
-  {%- if page.hero and page.hero != "" %}
-  <figure class="home-hero">
-    <img src="{{ page.hero | relative_url }}" alt="{{ page.hero_alt | default: site.title | escape }}">
-  </figure>
-  {%- endif %}
+  {% include gallery.html images=page.gallery id="home-gallery" autoplay="5000" %}
   <div class="prose home-intro">
     {{ content }}
   </div>
+  {%- if page.gallery_2 and page.gallery_2.size > 0 %}
+  {% include gallery.html images=page.gallery_2 id="home-gallery-2" autoplay="6000" %}
+  {%- endif %}
 </section>

@@ -7,7 +7,7 @@
 {%- assign imgs = include.images -%}
 {%- if imgs and imgs.size > 0 -%}
 {%- assign gid = include.id | default: "gallery" -%}
-<div class="gallery" id="{{ gid }}" data-gallery>
+<div class="gallery" id="{{ gid }}" data-gallery{% if include.autoplay %} data-autoplay="{{ include.autoplay }}"{% endif %}>
   <div class="gallery-stage">
     {%- for img in imgs %}
     <figure class="gallery-slide{% if forloop.first %} is-active{% endif %}" aria-hidden="{% if forloop.first %}false{% else %}true{% endif %}">

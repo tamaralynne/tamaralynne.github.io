@@ -1,0 +1,23 @@
+# Presentations page. Each talk: title, subtitle, description, and optionally
+# one video: youtube (the ID after v=), vimeo (the number), or video_file.
+talks:
+  - title: '"What Happened???"'
+    subtitle: Tamara Lynne with Portland Story Theater
+    description: A storytelling performance about the risks and rewards of an international visit, to research theatre and social movements in Brazil's Central West.
+    youtube: c8FW3V2Cyjg
+  - title: Alliance of Artist Communities
+    subtitle: Hosted by Regional Arts and Culture Council
+    description: A panel presentation with community partners and participants of the Intersections Artist Residency at Bud Clark Commons.
+    vimeo: "358415935"
+  - title: Annexation and Assimilation
+    subtitle: ""
+    description: A residency and performance with students from Harrison Park School, in collaboration with Sabina Haque, Artist in Residence with City of Portland Archives and Records Center.
+    youtube: tDMO4vCQTCg
+  - title: What is a Place?
+    subtitle: At the Intersection of Housing and Transit Justice
+    description: Theatre creation with communities living, working, and accessing services in the Jade-Midway District, as part of the APANO (Asian Pacific American Network of Oregon) Placemaking Artist Collaborative.
+    vimeo: "358438135"
+  - title: Home is Where the Heart is
+    subtitle: Pitch a Tent
+    description: Forum Theatre on the streets, as part of engaging housed and houseless neighbors in dialogue about homelessness, in collaboration with Right to Survive and with support from Oregon Humanities.
+    video_file: /assets/video/pitch-a-tent.mp4

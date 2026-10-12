@@ -3,11 +3,16 @@ title: About
 permalink: /about/
 ---
 
+![Tamara Lynne](/assets/images/site/about-portrait.jpg){: .portrait}
+
 Founder of Living Stages Theatre, in Portland, Oregon, Tamara Lynne has collaborated, created theatre, and facilitated dialogue with communities including: students, bus drivers, low-income tenants, bus riders, educators, medical students, activists, neighborhood organizations, community groups, and members of Portland's houseless community. Internationally, Tamara has engaged in research and artistic collaborations in Brazil's Central West, West Bengal, India, and Cape Town, South Africa.
 
 Tamara's theatre-making and community projects investigate and demonstrate the possibilities of collaboration between theatre artists, community members, and civic organizations — engaging all in a creative, collective process of re-imagining our world.
 
 > My theatre-making explores possibilities of collaboration between theatre artists, community members, and civic organizations in the practice of collective re-imagining of our world.
+
+![Tamara Lynne. Photo by Venetia Bouronikou](/assets/images/site/about-venetia-bouronikou.jpg)
+*Photo by Venetia Bouronikou*
 
 Read more: [Teaching Philosophy](/teaching-philosophy/) · [CV](/cv/)
 
